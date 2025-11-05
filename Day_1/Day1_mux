@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Day1_mux is  -- Define the entity (the external interface of the MUX)
+	port (
+		A   : in std_logic_vector (7 downto 0);  -- First 8 bit input
+		B   : in std_logic_vector (7 downto 0);  -- Second 8 bit input
+		SEL : in std_logic;                      -- Select signal (0 or 1)
+		Y   : out std_logic_vector (7 downto 0)  -- 8 bit output
+	);
+end Day1_mux;
+
+architecture arc_Day1_mux of Day1_mux is  -- Define the architecture (internal behavior)
+begin
+	process (A,B,SEL)
+	begin
+		if SEL = '0' then
+			Y <= A;
+		else
+			Y <= B;
+		end if;
+	end process;
+end arc_Day1_mux;
+		
+		
