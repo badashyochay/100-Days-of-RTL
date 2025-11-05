@@ -2,7 +2,7 @@
 
 This document details the successful verification of the 8-bit 2-to-1 multiplexer designed in `day1_mux.vhd`. The simulation was executed using the testbench `day1_mux_tb.vhd`, and the resulting waveform (`day1_waveform.png`) confirms the component's correct logical behavior.
 
-![Simulation Waveform for Day 1 MUX](day1_waveform.png)
+![Simulation Waveform for Day 1 MUX](Day1_waveform.png)
 
 ## Simulation Analysis
 
