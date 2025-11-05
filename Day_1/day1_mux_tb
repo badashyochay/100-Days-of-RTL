@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Day1_mux_tb is
+end Day1_mux_tb;
+
+architecture arc_Day1_mux_tb of Day1_mux_tb is
+	component Day1_mux is
+		port (
+			A   : in std_logic_vector (7 downto 0);  -- First 8 bit input
+			B   : in std_logic_vector (7 downto 0);  -- Second 8 bit input
+			SEL : in std_logic;                      -- Select signal (0 or 1)
+			Y   : out std_logic_vector (7 downto 0)  -- 8 bit output
+		);
+		end Day1_mux
+	signal TB_A   : std_logic_vector(7 downto 0);
+    signal TB_B   : std_logic_vector(7 downto 0);
+    signal TB_SEL : std_logic;
+    signal TB_Y   : std_logic_vector(7 downto 0);
+begin
+	DUT: day1_mux
+        port map (
+            A   => TB_A,
+            B   => TB_B,
+            SEL => TB_SEL,
+            Y   => TB_Y
+        );
+		
+	TB_A <= x"AA" after 0 ns,   
+            x"FF" after 20 ns;   
+
+    TB_B <= x"55" after 0 ns,    
+            x"00" after 20 ns;   
+
+    TB_SEL <= '0' after 0 ns,     
+              '1' after 10 ns,    
+              '0' after 30 ns;
+end arc_Day1_mux_tb
