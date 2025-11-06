@@ -4,7 +4,7 @@ The objective for Day 2 was to design, verify, and compare two fundamental "flav
 
 The testbench (`day2_tb.vhd`) instantiates both DFFs and feeds them the exact same Clock, Reset, and Data signals. The simulation waveform below clearly illustrates the critical difference in their behavior.
 
-![Simulation Waveform for Day 2](Day2_waveform.png)
+![Simulation Waveform for Day 2](Day2_Waveform.png)
 
 ## Simulation Analysis
 
