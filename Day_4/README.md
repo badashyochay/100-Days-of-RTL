@@ -39,4 +39,31 @@ The `TB_SEL` opcode was changed every 10 ns to trigger a new calculation.
     * **Status:** ✅ **Correct.**
 
 * **`40-50ns` (SEL="100"): AND**
-    * **Expected:**
+    * **Expected:** `x"10" AND x"02"` -> `0` (which is `x"00"`)
+    * **Result (`TB_Y`):** `"00000000"` (`x"00"`)
+    * **Status:** ✅ **Correct.**
+
+* **`50-60ns` (SEL="101"): OR**
+    * **Expected:** `x"10" OR x"02"` -> `18` (which is `x"12"`)
+    * **Result (`TB_Y`):** `"00010010"` (`x"12"`)
+    * **Status:** ✅ **Correct.**
+
+* **`60-70ns` (SEL="110"): XOR**
+    * **Expected:** `x"10" XOR x"02"` -> `18` (which is `x"12"`)
+    * **Result (`TB_Y`):** `"00010010"` (`x"12"`)
+    * **Status:** ✅ **Correct.**
+
+* **`70-80ns` (SEL="111"): EQL (Equal Test 1)**
+    * **Expected:** Is `16 == 2`? No.
+    * **Result (`TB_Y`):** `"00000000"` (`x"00"`)
+    * **Status:** ✅ **Correct.**
+
+* **`80-90ns` (SEL="111"): EQL (Equal Test 2)**
+    * **Event:** `TB_B` is changed to `x"10"` (16).
+    * **Expected:** Is `16 == 16`? Yes.
+    * **Result (`TB_Y`):** `"00000001"` (`x"01"`)
+    * **Status:** ✅ **Correct.**
+
+### Conclusion
+
+The simulation waveform successfully validates all 8 required operations. The ALU correctly performs arithmetic, shift, and logical operations, as well as the final equality check, proving the design is logically sound.
