@@ -4,7 +4,7 @@ The goal for Day 4 was to design and verify a core processing component: an 8-bi
 
 The simulation waveform below confirms that all 8 operations were implemented correctly.
 
-![Simulation Waveform for Day 4 ALU](Day4_waveform.png)
+![Simulation Waveform for Day 4 ALU](Day4_Waveform.png)
 
 ## Simulation Analysis
 
